@@ -1,0 +1,194 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="Styles\flowersstryle.css" />
+    <script src="Scripts\FlowerJS.js"></script>
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+    <form id="form1" class="flowershop" runat="server">
+        <div class="content">
+            <h1 class="heading">FLOWER SHOP ONLINE</h1>
+            <div class="firstBar">
+            </div>
+            <br />
+            <div class="wholeDocument">
+                <div class="left">
+                    <img src="Images\Annotation 2020-02-13 120502.png" />
+                </div>
+
+                <div class="rightPadding">
+
+
+                    <div class="firstDiv">
+                        <h3 class="h3Class">Secure Payment Page</h3>
+                        <label class="lblSelectClass"><b>Select Language </b></label>
+                        &nbsp&nbsp
+                    <select id="myList" class="myList">
+                        <option value="English">English</option>
+                        <option value="Tamil">Tamil</option>
+                        <option value="Telugu">Telugu</option>
+                        <option value="Chinese">Chinese</option>
+                        <option value="French">French</option>
+                    </select>
+                        <br />
+                        <br />
+                        <label class="lblPaymentMethod">Payment Method</label>
+                        <label class="lblpay"><b>Visa</b></label><br />
+                        <label class="lblItemOrdered"><b>
+                        <label class="lblpay">
+
+                        <img class="visa" src="Images\Logo-Visa-2013.jpg" /></label></b></label><br />
+                        <label class="lblDescription">Description</label>
+                        <label class="lblItemOrdered"><b>Item Ordered</b></label><br />
+
+                        <br />
+                        <label class="lblAmount">Amount</label>
+                        <label class="lblEuro">&euro;<b>100.00</b></label>
+
+                    </div>
+                    <br />
+
+                    <div class="secondDiv">
+                        <p class="lblCardDetails">Card Details<img class="QuestionMark" src="Images\gg1.png" /></p>
+                        <p class="mandatory">You must fill in fields marked with *</p>
+                        <label class="lblAddress">*Card Number</label>
+                        <input type="text" id="numCard" class="numCardNumber" required="required" onchange="validateCardNumber();"  />
+                        <label id="lblValidateCardNumber" class="valCardNumber" style="display: none;color: red;">Enter the Valid Card Number</label>
+                        <label class="lblSecurityCode">*Security Code</label>
+                        <input type="text" id="numCode" class="numSecurityCode" required="required" onchange="validateSecurityCode()" /><br>
+                        <label id="lblValidateSecurityCode" class="valSecurityCode" style="display: none;color: red;">Enter the Valid Security Code</label>
+                        <label class="lblExpiryDate">*Expiry date</label>
+                        <select id="myExpiryDateList" class="ExpireyDateList" required="required" onchange=" validateExpiryMonth()">
+                            <option value="">Feb</option>
+                            <option value="Jan">Jan</option>
+                            <option value="Feb">Feb</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="Aug">Aug</option>
+                            <option value="Sept">Sept</option>
+                            <option value="Oct">Oct</option>
+                            <option value="Nov">Nov</option>
+                            <option value="Dec">Dev</option>
+                        </select>
+                        <select id="yearList" class="myYearList">
+                            <option value="">2020</option>
+                            <option value="2000">2000</option>
+                            <option value="2001">2001</option>
+                            <option value="2002">2002</option>
+                            <option value="2003">2003</option>
+                            <option value="2004">2004</option>
+                            <option value="2005">2005</option>
+                            <option value="2006">2006</option>
+                            <option value="2007">2007</option>
+                            <option value="2008">2008</option>
+                            <option value="2009">2009</option>
+                            <option value="2010">2010</option>
+                            <option value="2011">2011</option>
+                        </select><br />
+                         <label id="lblValidateDateYear" style="display: none;color: red;">Please select the date</label>
+
+                        <label class="lblCardHolderName">*Card Holder's Name</label>
+                        <input type="text" class="txtCarHolderName" id="idCarHolderName" required="required" onchange=" validateName()" />
+                        <label id="lblValidateName"  class="valName" style="display: none;color: red;">Enter the Valid  Name</label>
+                        <p class="pCarHolderDetails">Cardholder details<img class="QuestionMark" src="Images\gg1.png" /></p>
+                        <p class="mandatoryCardHolderDetails">You must fill in fields marked with*</p>
+                        <label class="lblAddress">*Addresss1</label>
+                        <input type="text" class="txtAddress" id="address" required="required" onchange="validateAddress()" /><br>
+                        <label id="ValidateAddress" class="valAddress" style="display: none; color: red;">Enter the Valid  Address </label>
+                        
+                        <label class="lblAddress2">Address2</label>
+                        <input type="text" class="txtAddress2" />
+                        <label class="lblAddress3">Address3</label>
+                        <input type="text" class="txtAddress3" />
+                        <label class="lblTown">*Town/City</label>
+                        <input type="text" class="txtTown" required="required" id="town" onchange="validateTown()" />
+                        <label id="lblValidateTown" class="valTown" style="display: none;color: red;">Enter the Valid Town</label>
+
+                        <label class="lblRegion">Region</label>
+                        <input type="text" class="region" id="txtRegion" onchange="validateRegion()" /><br>
+                        <label id="lblValidateRegion" class="valRegion" style="display: none;color: red;">Enter the Valid  Region</label>
+
+                        <label class="lblpasscode">*Postcode/Zip code</label>
+                        <input type="text" class="txtPostCode" required="required" id="Zipcode" onchange="validateZipCode()" /><br>
+                         <label id="lblValidateCode"  class="valZipCode" style="display: none;color: red;">Enter the Valid  PostCode</label>
+                        <label class="lblCountry">
+                            *Country
+                        </label>
+                        <select id="country" class="txtCountry" required="required" onchange="validateCountry()">
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="India">India</option>
+                            <option value="China">China</option>
+                        </select><br />
+                        <label id="lblValidateCountry" style="display: none;color: red;">Invalid</label>
+                        <label class="lblPhone">Telephone</label>
+                        <input type="text" class="txtTelephone" id="phoneNo" onchange="validatePhoneNo()" /><br>
+                        <label class="valPhoneNumber" id="ValidatePhoneNumber" style="display: none;color: red;">Please Enter the Correct Phone Number</label>
+                       
+                        <label class="lblFax">Fax</label>
+                        <input type="text" class="txtFaxNumber" id="fax" onchange="validateFax()" /><br>
+                         <label id="lblValidateFaxNumber" class="valFax" style="display: none;color: red;">Enter the Valid  Fax Number</label>
+                        <label class="lblEmail">*Email Address</label>
+                        <input type="text" class="txtEmail" required="required" id="email" onchange="validateEmail();" />
+                        <span id="lblValidateEmail" class="valEmail" style="display: none;color: red;">Enter the Valid  E-mail</span>
+
+
+                    </div>
+                    <div class="buttons">
+                        <div class="right">
+                            <a href="FlowerShopOnline.aspx" class="pStartAgain">&nbsp;
+                            <img src="Images\refresh_image.png" style="height: 14px; width: 15px" class="restartImage" />&nbsp; START AGAIN
+                            </a>
+                            <br />
+                            <a href="FlowerShopOnline.aspx" class="cancel">
+
+                                <img src="Images\cancel_image.png" style="height: 17px; width: 20px" class="cancelimage" onclick="CancelPayment()" />&nbsp;CANCEL
+                            </a>
+                        </div>
+                        <div class="leftPadding">
+                            <a href="#" class="payment" onclick="ValidateForm()">&nbsp;MAKE PAYMENT </a>
+                            <img src="Images\gg.png" style="height: 26px; width: 32px" class="flower" />
+                           
+                            <br />
+                        </div>
+                    </div>
+                    <hr />
+                    <br />
+                    <p class="refund">Refunds and Returns</p>
+                    <p class="moreInformation">For more information visit<a href="#" class="informationLink">Refunds and Return Policy</a> </p>
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="Images\worldpay.jpg" class="worldpay" />
+                            </td>
+                            <td>
+                                <p class="help">
+                                    For Help With Your Payment Visit the<a href="#" class="help Link"> WorldPay Help</a>
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+
+
+
+                </div>
+
+            </div>
+            <div class="footerDiv">
+                <h2 class="footer">Thank You For Shopping a Flowershop. Have a nice day</h2>
+            </div>
+
+        </div>
+
+    </form>
+</body>
+</html>
